@@ -1,0 +1,41 @@
+body {
+/* 	background: #fafafa; */
+/* 	background-image: url(https://www.cscpro.org/image/SRCw.png); */
+	background-image: url(../../www.cscpro.org/image/xmzx.png);
+	padding-top: 100px;
+}
+
+#content {
+	min-height: 500px;
+}
+
+
+/* Carousel */
+.carousel .carousel-item, .img-as-bg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.carousel .item { height: 120px; }
+.carousel-item img {
+	min-width: 100%;
+	margin-top: -10%;
+	top: 10%;
+}
+
+.img-category {
+	height: 200px;
+}
+
+
+.breadcrumb {
+	border: 1px solid rgba(0,0,0,0.125);
+}
+
+.card img {
+	max-width: 100%;
+}
+
+/* Footer from Bv4 docs */
+.bd-footer{padding:4rem 0;margin-top:4rem;font-size:85%;text-align:center;background-color:#f7f7f7;border-top:1px dotted #ccc}.bd-footer a{font-weight:500;color:#464a4c}.bd-footer a:hover{color:#0275d8}.bd-footer p{margin-bottom:0}@media (min-width:576px){.bd-footer{text-align:left}}.bd-footer-links{padding-left:0;margin-bottom:1rem}.bd-footer-links li{display:inline-block}.bd-footer-links li+li{margin-left:1rem}

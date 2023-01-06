@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from fasor.its.ac.id/order/create/4 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jan 2023 14:47:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- CSRF Token -->
+		<meta name="csrf-token" content="ABCKPsAwMDHGIpNAnQpBp633MhV6VEW3n7sgL7M8">
+
+		<title>Fasor</title>
+
+		<link rel="shortcut icon" href="../../favicon.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="../../favicon.png">
+
+		<!-- Styles -->
+		<link href="../../css/bv4.min.css" rel="stylesheet">
+		<link href="../../vendor/fontawesome/css/all.min.css" rel="stylesheet">
+		<link href="../../css/maine605.css?gTsyN5woeD5xFU9stHYO8hmWUWLwBGYH" rel="stylesheet">
+		    <link href="../../../cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet">
+    <link href="../../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css"
+          rel="stylesheet">
+
+		<!-- Scripts -->
+		<script>
+			window.Laravel = {"csrfToken":"ABCKPsAwMDHGIpNAnQpBp633MhV6VEW3n7sgL7M8"};
+		</script>
+	</head>
+
+	<body>
+		<div id="app">
+			<nav class="navbar navbar-toggleable-md fixed-top navbar-light bg-primary">
+				<div class="container">					
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="../../index.html">
+						<img src="../../../www.cscpro.org/image/sZ4g.png" height="30" class="d-inline-block align-top" title="Institut Teknologi Sepuluh Nopember">
+						Fasor Sepuluh Nopember
+					</a>
+
+					<!-- layouts.nav -->
+					<div class="collapse navbar-collapse" id="navbarColor01">
+						<ul class="nav navbar-nav mr-auto">
+						</ul>
+
+						<ul class="nav navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" href="../../index.html">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item dropdown active">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#">Reservasi</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a class="dropdown-item" href="1.html"> Basket</a></li>
+			                        <li><a class="dropdown-item" href="2.html"> Bulutangkis</a></li>
+			                        <li><a class="dropdown-item" href="3.html"> Tennis Lapangan</a></li>
+			                        <li><a class="dropdown-item" href="4.html"> Futsal</a></li>
+			                        <li><a class="dropdown-item" href="5.html"> Sepakbola</a></li>
+			                        <li><a class="dropdown-item" href="6.html"> Lari/Atletik</a></li>
+			                        <li><a class="dropdown-item" href="7.html"> Voli</a></li>
+								</ul>
+							</li>							
+							<li class="nav-item">
+								<a class="nav-link" href="../search.html">Cek Pembayaran</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../../login.html">Admin</a>
+							</li>
+							<!--<li class="nav-item">
+								<a class="nav-link" href="https://fasor.its.ac.id/article">Berita</a>
+							</li> -->
+													</ul>
+<!-- 						<form class="form-inline">
+							<input class="form-control mr-sm-2" type="text" placeholder="Search">
+							<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+						</form> -->
+					</div>
+				</div>
+			</nav>
+
+			<div id="content" class="container">
+				
+				
+				    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="../../index.html">Reservation</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card my-4">
+                <div class="card-block">
+                    <div id="calendar"></div>
+                </div>
+                <div class="card-block">
+                    <h4 class="m-b-0">Keterangan</h4>
+                                            <div class="my-2">
+                            <span class="badge badge-default mr-2"
+                                  style="background: #721fde; color: transparent; border: 1px solid #ccc">Default</span>
+                            Lapangan Futsal Indoor
+                        </div>
+                                            <div class="my-2">
+                            <span class="badge badge-default mr-2"
+                                  style="background: #247cff; color: transparent; border: 1px solid #ccc">Default</span>
+                            Lapangan Futsal Outdoor
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Data Pemesanan</h3>
+                <p class="text-muted m-b-30 font-13"> Isilah data secara lengkap </p>
+                <hr>
+                <div class="card my-4">
+                    <form method="post" action="https://fasor.its.ac.id/order/store" id="form-pemesanan" class="card-block"
+                          enctype="multipart/form-data" autocomplete="off">
+                        <div class="form-group">
+                            <label>Pengguna </label>
+                            <select class="form-control" id="order-typebuyer_id" name="typebuyer_id"
+                                    onchange="changeSlotPengguna(this)" required>
+                                <option value="U">Umum</option>
+                                <option value="D">Dosen, Tenaga Kependidikan, dan Mahasiswa</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label id="label-noid">No KTP/SIM</label>
+                            <input type="text" class="form-control" name="ssn" id="order-ssn" onkeyup="id_card(this);"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">Upload Kartu Identitas Koordinator Tim</label>
+                            <input type="file" class="form-control-file" name="idcard" id="idcard"
+                                   aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">
+                                &mdash; File tidak boleh lebih dari 1M (KTP/KTM/SIM)
+                            </small>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Tim/Departemen/Fakultas</label>
+                            <input type="text" class="form-control" name="nama" id="order-nama"
+                                   onkeyup="special_caracter(this);" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Telepon </label>
+                            <input type="text" class="form-control" name="telpon" id="order-telpon"
+                                   onkeyup="phone_number(this);" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email </label>
+                            <input type="text" class="form-control" name="email" id="order-email"
+                                   onkeyup="special_caracter(this);">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="text" class="form-control" name="tanggal_pakai" id="order-tanggal"
+                                   autocomplete="off" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Lapangan </label>
+                            <select class="form-control" id="order-field_id" name="field_id"
+                                    onchange="changeSlotField(this)" required>
+                                <option value="">--Pilih Opsi--</option>
+                                                                <option value="3">Lapangan Futsal Indoor</option>
+                                                                <option value="5">Lapangan Futsal Outdoor</option>
+                                                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Kegiatan </label>
+                            <select class="form-control" id="order-kegiatan" name="kegiatan" required>
+                                <option value="latihan_insidentil">Latihan Insidentil</option>
+                                                                <option value="turnamen">Event/Turnamen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Jadwal </label>
+                            <select class="form-control" id="order-slot_id" name="slot_id[]" multiple="multiple"
+                                    required>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" name="sport_id" id="order-sport_id"
+                                   value="4">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#modal-agreement">
+                                Simpan
+                            </button>
+                        </div>
+                        <input type="hidden" name="_token" value="ABCKPsAwMDHGIpNAnQpBp633MhV6VEW3n7sgL7M8">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="modal-agreement" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">KONSEP PERNYATAAN dan PERSETUJUAN</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Sebelum memastikan sewa lapangan fasilitas olahraga ITS, Saya bersedia dan setuju untuk
+                        mengikuti semua ketentuan yang diberlakukan oleh pihak pengelola diantaranya:
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <td>1.</td>
+                            <td>
+                                Menggunakan fasilitas olahraga sesuai dengan tugas pokok dan fungsinya, misal: lapangan
+                                bulutangkis digunakan bulutangkis, lapangan basket digunakan untuk basket, dsb
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>
+                                Menggunakan lapangan sudah sesuai dengan jenis kegiatan yang didaftarkan, misal: latihan
+                                untuk latihan, turnamen untuk turnamen
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>
+                                Menggunakan lapangan sesuai dengan kategori pengguna, Dosen, Tendik dan Mahasiswa
+                                mendaftar di kategori internal, masyarakat umum mendaftar dikategori eksternal.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>
+                                Menggunakan perlengkapan olahraga sesuai dengan jenis lapangan yang disewa, misalnya
+                                lapangan bulutangkis harus menggunakan sepatu khusus bulutangkis, lapangan tennis harus
+                                menggunakan sepatu khusus tennis, dan seterusnya
+                            </td>
+                        </tr>
+                    </table>
+                    <p>
+                        Jika setelah memastikan sewa, dan ternyata pada saat hari H terjadi pelanggaran-pelanggaran
+                        tersebut diatas, maka Saya bertanggung jawab penuh dan memastikan untuk mentaati ketentuan dari
+                        pihak pengelola, yaitu:
+                    </p>
+                    <p class="text-danger font-weight-bold">
+                        Saya bersedia menerima sanksi berupa pemberhentian penggunaan lapangan pada saat hari H dan
+                        tidak akan meminta ganti rugi dalam bentuk apapun.
+                    </p>
+                    <label class="mb-3">
+                        <input type="checkbox" name="agreement" id="agreement" class="mr-1">
+                        Saya menyetujui Pernyataan dan Persetujuan di atas.
+                    </label>
+                    <button type="button" id="simpan-pesanan" class="btn btn-primary" disabled>
+                        Simpan Pesanan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+			</div>
+
+			<footer class="bd-footer text-muted">
+				<div class="container">
+					<p>Fasor Sepuluh Nopember</p>
+					<p>Phone: (031) 812912 | Fax: (031) 827389</p>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="../../../cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="../../../cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+		<script src="../../../cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+		<script src="../../js/main.js"></script>
+		    <script src="../../../cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/locale/id.js"></script>
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.id.min.js"></script>
+    <script>
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'basicWeek'
+            },
+            defaultView: 'basicWeek',
+            height: 550,
+            events: [{"kode_booking":"NPUYM","is_verified":"1","typebuyer_id":"U","nama":"Lapangan Futsal Outdoor","warna":"#247cff","start":"2023-01-06T19:00","end":"2023-01-06T20:00","title":"Lunas","textColor":"#fff","backgroundColor":"#247cff"},{"kode_booking":"NPUYM","is_verified":"1","typebuyer_id":"U","nama":"Lapangan Futsal Outdoor","warna":"#247cff","start":"2023-01-06T20:00","end":"2023-01-06T21:00","title":"Lunas","textColor":"#fff","backgroundColor":"#247cff"},{"kode_booking":"VI9XP","is_verified":"1","typebuyer_id":"D","nama":"Lapangan Futsal Outdoor","warna":"#247cff","start":"2023-01-07T16:00","end":"2023-01-07T17:00","title":"Lunas","textColor":"#fff","backgroundColor":"#247cff"},{"kode_booking":"VI9XP","is_verified":"1","typebuyer_id":"D","nama":"Lapangan Futsal Outdoor","warna":"#247cff","start":"2023-01-07T17:00","end":"2023-01-07T18:00","title":"Lunas","textColor":"#fff","backgroundColor":"#247cff"}]
+        });
+
+        $('#order-tanggal').datepicker({
+            language: 'id',
+            startDate: '+3d',
+            todayHighlight: true,
+        }).on('changeDate', function (ev) {
+            $("#order-slot_id").empty();
+            $("#order-field_id").val("");
+        });
+
+        $('#order-tanggal2').datepicker({
+            language: 'id',
+            startDate: '+3d',
+            todayHighlight: true,
+        });
+
+        $('#agreement').on('change', function () {
+            if ($(this).is(':checked')) {
+                $("#simpan-pesanan").prop('disabled', false);
+            } else {
+                $("#simpan-pesanan").prop('disabled', true);
+            }
+        });
+
+        $("#simpan-pesanan").on('click', function () {
+            $("#form-pemesanan").submit();
+        });
+
+        function changeSlotField(e) {
+            var date = new Date($('#order-tanggal').val());
+            var days = ['minggu', 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu'];
+            var slots = [{"id":"54","keterangan":"Shift 1 (06.00 - 07.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"55","keterangan":"Shift 2 (07.00 - 08.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"100","keterangan":"Shift 3 (08.00 - 09.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"101","keterangan":"Shift 4 (09.00 - 10.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"104","keterangan":"Shift 5 (10.00 - 11.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"105","keterangan":"Shift 6 (11.00 - 12.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"106","keterangan":"Shift 7 (12.00 - 13.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"107","keterangan":"Shift 8 (13.00 - 14.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"108","keterangan":"shift 9 (14.00 - 15.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"109","keterangan":"Shift 10 (15.00 - 16.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"110","keterangan":"shift 11 (16.00 - 17.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"111","keterangan":"shift 12 (17.00 - 18.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"112","keterangan":"shift 13 (18.00 - 19.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"113","keterangan":"Shift 14 (19.00 - 20.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"1","rabu":"1","kamis":"1","jumat":"1","sabtu":"1"},{"id":"114","keterangan":"Shift 15 (20.00 - 21.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"0","rabu":"1","kamis":"0","jumat":"1","sabtu":"1"},{"id":"115","keterangan":"Shif 16 (21.00 - 22.00)","lapangan":"5","minggu":"1","senin":"1","selasa":"0","rabu":"1","kamis":"0","jumat":"1","sabtu":"1"}];
+            var value = e.value;
+            var dayName = days[date.getDay()];
+
+            $("#order-slot_id").empty();
+            $(slots).each(function (i) {
+                if (slots[i].lapangan == value) {
+                    if (slots[i][dayName] == '1') {
+                        $("#order-slot_id").append("<option value='" + slots[i].id + "'>" + slots[i].keterangan + "</option>");
+                    }
+                }
+            });
+        }
+
+        function changeSlotPengguna(e) {
+            var value = e.value;
+
+            if (value == 'U') {
+                document.getElementById("label-noid").innerHTML = "No KTP/SIM";
+            } else {
+                document.getElementById("label-noid").innerHTML = "NIP/NRP";
+            }
+        }
+
+        function id_card(e) {
+            var max_chars = 16;
+
+            if (e.value.length > max_chars) {
+                e.value = e.value.substring(0, max_chars);
+            }
+
+            if (!/^[0-9]+$/.test(e.value) || (e.value.length == 1 && e.value == '0')) {
+                e.value = e.value.substring(0, e.value.length - max_chars);
+            }
+        }
+
+        function special_caracter(e) {
+            var max_chars = 45;
+
+            if (e.value.length > max_chars) {
+                e.value = e.value.substring(0, max_chars);
+            }
+
+            if (/\`|\~|\!|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\>|\?|\/|\""|\;|\:/.test(e.value)) {
+                e.value = e.value.substring(0, e.value.length - max_chars);
+            }
+        }
+
+        function phone_number(e) {
+            var max_chars = 18;
+
+            if (e.value.length > max_chars) {
+                e.value = e.value.substring(0, max_chars);
+            }
+
+            if (!/^[0-9 ]+$/.test(e.value)) {
+                e.value = e.value.substring(0, e.value.length - max_chars);
+            }
+        }
+
+    </script>
+	</body>
+
+
+<!-- Mirrored from fasor.its.ac.id/order/create/4 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jan 2023 14:47:27 GMT -->
+</html>
